@@ -9,72 +9,51 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f8ff; /* Light blue background */
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
-        .header {
-            position: relative;
-            height: 80vh; /* Adjusted height for full image visibility */
-            background: url('FrontPage.jpg') no-repeat center center/cover; /* Centered and cover-sized background */
+        .menu-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            justify-content: center;
         }
-        .menu-link {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            background-color: rgba(255, 99, 71, 0.7); /* Coral background with opacity */
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .menu-link a {
-            color: white; /* White text color for link */
-            text-decoration: none; /* Remove underline */
-            font-size: 16px;
-        }
-        .menu-link a:hover {
-            text-decoration: underline; /* Underline on hover */
-        }
-        .content {
-            padding: 20px;
-            background-color: #ffffff; /* White content background */
-            color: #555555; /* Dark gray text color */
-        }
-        .content h2, .content h3 {
-            color: #ff6347; /* Coral heading color */
-        }
-        .content h2 {
-            border-bottom: 2px solid #ff6347; /* Coral underline for h2 */
-            padding-bottom: 5px;
-        }
-        .content h3 {
-            margin-top: 20px; /* Top margin for h3 */
-        }
-        .footer {
-            background-color: #ff6347; /* Coral footer background */
-            color: white; /* White footer text color */
-            padding: 10px;
-            text-align: center;
+        .menu-images img {
+            max-width: 100%; /* Ensure image fits within viewport */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Spacing between images */
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <!-- Menu Link Below FrontPage.jpg -->
-        <div class="menu-link">
-            <a href="Menu-Mobile.pdf" target="_blank">Browse Menu</a>
+    <header>
+        <!-- Your header content, navigation bar, etc. -->
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Display menu images -->
+        <div class="menu-images">
+            <!-- Replace the following with your image tags -->
+            <img src="menu/1.jpg" alt="Menu Item 1">
+            <img src="menu/2.jpg" alt="Menu Item 2">
+            <img src="menu/3.jpg" alt="Menu Item 3">
+            <img src="menu/4.jpg" alt="Menu Item 4">
+            <img src="menu/5.jpg" alt="Menu Item 5">
+            <img src="menu/6.jpg" alt="Menu Item 6">
+            <img src="menu/7.jpg" alt="Menu Item 7">
         </div>
-    </div>
-    <div class="content">
-        <h2>Welcome to Hotel New Gundicha</h2>
-        <p>Hotel New Gundicha in Rayagada is renowned for its delectable fusion of Indian, Chinese, and Tandoori cuisines. This restaurant offers a diverse menu that caters to both vegetarian and non-vegetarian preferences, making it a popular dining destination for locals and visitors alike.</p>
-        <h3>Ambiance</h3>
-        <p>The restaurant boasts a warm and inviting ambiance, with comfortable seating arrangements suitable for both family gatherings and intimate dinners. The decor reflects a blend of traditional and contemporary styles, enhancing the dining experience with a cozy and pleasant atmosphere.</p>
-        <h3 id="browse-menu">Browse Menu</h3> <!-- Anchor point for Browse Menu section -->
-        <p><strong>Indian Cuisine:</strong> The Indian menu features a variety of classic dishes, from rich and creamy curries to spicy and flavorful biryanis. Signature dishes include Butter Chicken, Paneer Butter Masala, and an assortment of traditional Indian breads like Naan and Roti.</p>
-        <p><strong>Chinese Cuisine:</strong> The Chinese offerings range from savory stir-fries to flavorful noodles and soups. Popular dishes include Schezwan Noodles, Manchurian, and Sweet and Sour Chicken, all prepared with authentic ingredients and techniques.</p>
-    </div>
-    <div class="footer">
+    </main>
+
+    <footer>
+        <!-- Your footer content -->
         <p>&copy; 2024 Hotel New Gundicha. All rights reserved.</p>
-    </div>
+    </footer>
 </body>
 </html>
