@@ -10,6 +10,27 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden; /* Prevent horizontal scroll */
+            background-color: #121212; /* Dark background color */
+            color: #ffffff; /* White text color for contrast */
+        }
+        header, .footer {
+            background-color: #1f1f1f; /* Slightly lighter dark background for header and footer */
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            color: #ff6f00; /* Highlight color on hover */
         }
         .menu-images {
             display: flex;
@@ -22,6 +43,27 @@
             max-height: 100vh; /* Ensure image fits within viewport height */
             height: auto; /* Maintain aspect ratio */
             margin-bottom: 20px; /* Spacing between images */
+            border: 2px solid #333; /* Border to distinguish images */
+        }
+        .cta-section {
+            background-color: #282828; /* Dark background for CTA section */
+            color: #ff6f00; /* Orange text color for emphasis */
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            border-top: 5px solid #ff6f00; /* Additional border for emphasis */
+        }
+        .cta-section a {
+            color: #ff6f00; /* Color for links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .cta-section a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px 0;
         }
     </style>
 </head>
@@ -30,10 +72,7 @@
         <!-- Your header content, navigation bar, etc. -->
         <nav>
             <ul>
-                <!-- Remove the following <li> elements -->
-                <!-- <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/contact">Contact</a></li> -->
+                <!-- Navigation links if needed -->
             </ul>
         </nav>
     </header>
@@ -49,13 +88,18 @@
             <img src="menu/5.jpg" alt="Menu Item 5">
             <img src="menu/6.jpg" alt="Menu Item 6">
             <img src="menu/7.jpg" alt="Menu Item 7">
-			<img src="menu/8.jpg" alt="Menu Item 8">
-			<img src="menu/9.jpg" alt="Menu Item 9">
+            <img src="menu/8.jpg" alt="Menu Item 8">
+            <img src="menu/9.jpg" alt="Menu Item 9">
         </div>
     </main>
 
-    <footer>
-        <!-- Your footer content -->
+    <div class="cta-section">
+        <p>Want to showcase your business like this?</p>
+        <p>Let's create something amazing together! Reach out at <a href="tel:+9703666635">9703666635</a></p>
+        <p>Or visit us at <a href="https://www.pinewart.com" target="_blank">www.pinewart.com</a></p>
+    </div>
+
+    <footer class="footer">
         <p>&copy; 2024 Hotel New Gundicha. All rights reserved.</p>
     </footer>
 </body>
