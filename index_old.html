@@ -12,11 +12,9 @@
             overflow-x: hidden; /* Prevent horizontal scroll */
             background-color: #121212; /* Dark background color */
             color: #ffffff; /* White text color for contrast */
-            position: relative; /* Ensure relative positioning for absolute/fixed elements */
         }
         header, .footer {
             background-color: #1f1f1f; /* Slightly lighter dark background for header and footer */
-            position: relative; /* Ensure relative positioning for absolute/fixed elements */
         }
         nav ul {
             list-style-type: none;
@@ -67,47 +65,6 @@
             text-align: center;
             padding: 10px 0;
         }
-        /* Floating icon styles */
-        .floating-icon {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ff4444; /* Red background color */
-            color: #ffffff; /* White text color */
-            width: 200px;
-            height: 60px;
-            text-align: center;
-            line-height: 60px; /* Center vertically */
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: bold; /* Bold text */
-            z-index: 1000; /* Ensure icon stays above other content */
-            cursor: pointer; /* Change cursor to pointer on hover */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for floating effect */
-            transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease; /* Smooth transition for floating effect */
-        }
-
-        .floating-icon:hover {
-            transform: translateX(-50%) translateY(-5px); /* Move icon up slightly on hover */
-            width: 320px; /* Enlarge width on hover to fit text */
-            height: 70px; /* Enlarge height on hover to fit text */
-            background-color: #cc0000; /* Darker red background on hover */
-        }
-
-        .floating-icon a {
-            display: inline-block;
-            vertical-align: middle;
-            line-height: 60px; /* Match line height to parent's height */
-            text-decoration: none;
-            color: inherit; /* Inherit text color */
-            transition: color 0.3s ease; /* Smooth transition for text color */
-        }
-
-        .floating-icon a:hover {
-            text-decoration: none; /* Ensure no underline on hover */
-            color: #ffffff; /* White text color on hover */
-        }
     </style>
 </head>
 <body>
@@ -145,38 +102,5 @@
     <footer class="footer">
         <p>&copy; 2024 Hotel New Gundicha. All rights reserved.</p>
     </footer>
-
-    <!-- Floating icon for pinewart.com -->
-    <div class="floating-icon" id="floating-icon">
-        <a href="#" id="icon-link">Want own website ?</a>
-    </div>
-
-    <!-- JavaScript to handle hover effect and click event -->
-    <script>
-        // Get the elements
-        const floatingIcon = document.getElementById('floating-icon');
-        const iconLink = document.getElementById('icon-link');
-
-        // Define the text and link for when hovering
-        const hoverText = 'Click here to visit Pinewart.com for all your digital content needs!';
-        const hoverLink = 'https://www.pinewart.com';
-
-        // Add event listeners
-        floatingIcon.addEventListener('mouseenter', function() {
-            iconLink.innerHTML = hoverText;
-            floatingIcon.style.width = '320px'; // Adjust width to fit text
-            floatingIcon.style.height = '120px'; // Adjust height to fit text
-        });
-
-        floatingIcon.addEventListener('mouseleave', function() {
-            iconLink.innerHTML = 'Get your own website';
-            floatingIcon.style.width = '200px'; // Reset width
-            floatingIcon.style.height = '60px'; // Reset height
-        });
-
-        floatingIcon.addEventListener('click', function() {
-            window.location.href = hoverLink;
-        });
-    </script>
 </body>
 </html>
