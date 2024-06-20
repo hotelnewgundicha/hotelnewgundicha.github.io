@@ -80,7 +80,7 @@
             text-align: center;
             line-height: 60px; /* Center vertically */
             border-radius: 30px;
-            font-size: 16px;
+            font-size: 17px;
             font-weight: bold; /* Bold text */
             z-index: 1000; /* Ensure icon stays above other content */
             cursor: pointer; /* Change cursor to pointer on hover */
@@ -90,15 +90,14 @@
 
         .floating-icon:hover, .floating-icon.touch-active {
             transform: translateX(-50%) translateY(-5px); /* Move icon up slightly on hover */
-            width: 400px; /* Enlarge width on hover to fit text */
-            height: 70px; /* Enlarge height on hover to fit text */
+            width: 350px; /* Enlarge width on hover to fit text */
+            height: 65px; /* Enlarge height on hover to fit text */
             background-color: #cc0000; /* Darker red background on hover */
         }
 
         .floating-icon a {
             display: inline-block;
             vertical-align: middle;
-            line-height: 60px; /* Match line height to parent's height */
             text-decoration: none;
             color: inherit; /* Inherit text color */
             transition: color 0.3s ease; /* Smooth transition for text color */
@@ -107,6 +106,10 @@
         .floating-icon a:hover {
             text-decoration: none; /* Ensure no underline on hover */
             color: #ffffff; /* White text color on hover */
+        }
+
+        .reduced-line-height {
+            line-height: 1.2; /* Reduced line height for closer lines */
         }
     </style>
 </head>
@@ -158,7 +161,7 @@
         const iconLink = document.getElementById('icon-link');
 
         // Define the text and link for when hovering
-        const hoverText = 'Click to Visit Pinewart.com for all your digital content needs!';
+        const hoverText = 'Click to Visit Pinewart.com<br>For all your digital content needs!';
         const hoverLink = 'https://www.pinewart.com';
 
         // Add a flag to track if the icon has been touched
@@ -167,11 +170,13 @@
         // Add event listeners for hover
         floatingIcon.addEventListener('mouseenter', function() {
             iconLink.innerHTML = hoverText;
+            iconLink.classList.add('reduced-line-height'); // Add class to reduce line height
             floatingIcon.classList.add('touch-active');
         });
 
         floatingIcon.addEventListener('mouseleave', function() {
             iconLink.innerHTML = 'Want own website ?';
+            iconLink.classList.remove('reduced-line-height'); // Remove class to reset line height
             floatingIcon.classList.remove('touch-active');
         });
 
@@ -180,6 +185,7 @@
             if (!touched) {
                 e.preventDefault(); // Prevent the click event
                 iconLink.innerHTML = hoverText;
+                iconLink.classList.add('reduced-line-height'); // Add class to reduce line height
                 floatingIcon.classList.add('touch-active');
                 touched = true;
             }
@@ -191,6 +197,7 @@
                 window.location.href = hoverLink;
             } else {
                 iconLink.innerHTML = hoverText;
+                iconLink.classList.add('reduced-line-height'); // Add class to reduce line height
                 floatingIcon.classList.add('touch-active');
                 touched = true;
             }
