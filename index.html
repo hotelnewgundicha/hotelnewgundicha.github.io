@@ -207,6 +207,16 @@
             }
         });
 
+        // Add event listener for touch outside the floating icon
+        document.addEventListener('touchstart', function(e) {
+            if (touched && !floatingIcon.contains(e.target)) {
+                iconLink.innerHTML = 'Want own website?';
+                iconLink.classList.remove('reduced-line-height'); // Remove class to reset line height
+                floatingIcon.classList.remove('touch-active');
+                touched = false;
+            }
+        });
+
         // Add event listener for click
         floatingIcon.addEventListener('click', function() {
             if (touched) {
