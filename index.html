@@ -88,11 +88,18 @@
             transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease; /* Smooth transition for floating effect */
         }
 
-        .floating-icon:hover, .floating-icon.touch-active {
+        .floating-icon:hover {
             transform: translateX(-50%) translateY(-5px); /* Move icon up slightly on hover */
             width: 350px; /* Enlarge width on hover to fit text */
             height: 65px; /* Enlarge height on hover to fit text */
             background-color: #cc0000; /* Darker red background on hover */
+        }
+
+        .floating-icon.touch-active {
+            transform: translateX(-50%) translateY(-5px); /* Move icon up slightly on touch */
+            width: 350px; /* Enlarge width on touch to fit text */
+            height: 65px; /* Enlarge height on touch to fit text */
+            background-color: #cc0000; /* Darker red background on touch */
         }
 
         .floating-icon a {
@@ -151,7 +158,7 @@
 
     <!-- Floating icon for pinewart.com -->
     <div class="floating-icon" id="floating-icon">
-        <a href="#" id="icon-link">Want own website ?</a>
+        <a href="#" id="icon-link">Want own website?</a>
     </div>
 
     <!-- JavaScript to handle hover effect and click event -->
@@ -167,18 +174,27 @@
         // Add a flag to track if the icon has been touched
         let touched = false;
 
-        // Add event listeners for hover
-        floatingIcon.addEventListener('mouseenter', function() {
-            iconLink.innerHTML = hoverText;
-            iconLink.classList.add('reduced-line-height'); // Add class to reduce line height
-            floatingIcon.classList.add('touch-active');
-        });
+        // Function to check if the device is touch-enabled
+        function isTouchDevice() {
+            return 'ontouchstart' in window || navigator.maxTouchPoints;
+        }
 
-        floatingIcon.addEventListener('mouseleave', function() {
-            iconLink.innerHTML = 'Want own website ?';
-            iconLink.classList.remove('reduced-line-height'); // Remove class to reset line height
-            floatingIcon.classList.remove('touch-active');
-        });
+        // Add event listeners for hover (only for non-touch devices)
+        if (!isTouchDevice()) {
+            floatingIcon.addEventListener('mouseenter', function() {
+                iconLink.innerHTML = hoverText;
+                iconLink.classList.add('reduced-line-height'); // Add class to reduce line height
+            });
+
+            floatingIcon.addEventListener('mouseleave', function() {
+                iconLink.innerHTML = 'Want own website?';
+                iconLink.classList.remove('reduced-line-height'); // Remove class to reset line height
+            });
+
+            floatingIcon.addEventListener('click', function() {
+                window.location.href = hoverLink;
+            });
+        }
 
         // Add event listener for touch
         floatingIcon.addEventListener('touchstart', function(e) {
@@ -195,11 +211,6 @@
         floatingIcon.addEventListener('click', function() {
             if (touched) {
                 window.location.href = hoverLink;
-            } else {
-                iconLink.innerHTML = hoverText;
-                iconLink.classList.add('reduced-line-height'); // Add class to reduce line height
-                floatingIcon.classList.add('touch-active');
-                touched = true;
             }
         });
     </script>
