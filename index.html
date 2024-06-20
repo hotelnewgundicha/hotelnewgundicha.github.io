@@ -73,7 +73,7 @@
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #ff4444; /* Red background color */
+            background-color: #cc0000; /* Red background color */
             color: #ffffff; /* White text color */
             width: 200px;
             height: 60px;
@@ -88,9 +88,9 @@
             transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease; /* Smooth transition for floating effect */
         }
 
-        .floating-icon:hover {
+        .floating-icon:hover, .floating-icon.touch-active {
             transform: translateX(-50%) translateY(-5px); /* Move icon up slightly on hover */
-            width: 320px; /* Enlarge width on hover to fit text */
+            width: 480px; /* Enlarge width on hover to fit text */
             height: 70px; /* Enlarge height on hover to fit text */
             background-color: #cc0000; /* Darker red background on hover */
         }
@@ -158,24 +158,42 @@
         const iconLink = document.getElementById('icon-link');
 
         // Define the text and link for when hovering
-        const hoverText = 'Click here to visit Pinewart.com for all your digital content needs!';
+        const hoverText = 'Click to Visit Pinewart.com for all your digital content needs!';
         const hoverLink = 'https://www.pinewart.com';
 
-        // Add event listeners
+        // Add a flag to track if the icon has been touched
+        let touched = false;
+
+        // Add event listeners for hover
         floatingIcon.addEventListener('mouseenter', function() {
             iconLink.innerHTML = hoverText;
-            floatingIcon.style.width = '320px'; // Adjust width to fit text
-            floatingIcon.style.height = '120px'; // Adjust height to fit text
+            floatingIcon.classList.add('touch-active');
         });
 
         floatingIcon.addEventListener('mouseleave', function() {
-            iconLink.innerHTML = 'Get your own website';
-            floatingIcon.style.width = '200px'; // Reset width
-            floatingIcon.style.height = '60px'; // Reset height
+            iconLink.innerHTML = 'Want own website ?';
+            floatingIcon.classList.remove('touch-active');
         });
 
+        // Add event listener for touch
+        floatingIcon.addEventListener('touchstart', function(e) {
+            if (!touched) {
+                e.preventDefault(); // Prevent the click event
+                iconLink.innerHTML = hoverText;
+                floatingIcon.classList.add('touch-active');
+                touched = true;
+            }
+        });
+
+        // Add event listener for click
         floatingIcon.addEventListener('click', function() {
-            window.location.href = hoverLink;
+            if (touched) {
+                window.location.href = hoverLink;
+            } else {
+                iconLink.innerHTML = hoverText;
+                floatingIcon.classList.add('touch-active');
+                touched = true;
+            }
         });
     </script>
 </body>
