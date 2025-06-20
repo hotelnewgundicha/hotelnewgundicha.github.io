@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel New Gundicha</title>
     <style>
+        /* [Your existing CSS unchanged] */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-            background-color: #121212; /* Dark background color */
-            color: #ffffff; /* White text color for contrast */
-            position: relative; /* Ensure relative positioning for absolute/fixed elements */
+            overflow-x: hidden;
+            background-color: #121212;
+            color: #ffffff;
+            position: relative;
         }
         header, .footer {
-            background-color: #1f1f1f; /* Slightly lighter dark background for header and footer */
-            position: relative; /* Ensure relative positioning for absolute/fixed elements */
+            background-color: #1f1f1f;
+            position: relative;
         }
         nav ul {
             list-style-type: none;
@@ -32,7 +33,7 @@
             font-weight: bold;
         }
         nav ul li a:hover {
-            color: #ff6f00; /* Highlight color on hover */
+            color: #ff6f00;
         }
         .menu-images {
             display: flex;
@@ -42,21 +43,21 @@
         }
         .menu-images img {
             max-width: 100%;
-            max-height: 100vh; /* Ensure image fits within viewport height */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 20px; /* Spacing between images */
-            border: 2px solid #333; /* Border to distinguish images */
+            max-height: 100vh;
+            height: auto;
+            margin-bottom: 20px;
+            border: 2px solid #333;
         }
         .cta-section {
-            background-color: #282828; /* Dark background for CTA section */
-            color: #ff6f00; /* Orange text color for emphasis */
+            background-color: #282828;
+            color: #ff6f00;
             text-align: center;
             padding: 20px;
             font-size: 18px;
-            border-top: 5px solid #ff6f00; /* Additional border for emphasis */
+            border-top: 5px solid #ff6f00;
         }
         .cta-section a {
-            color: #ff6f00; /* Color for links */
+            color: #ff6f00;
             text-decoration: none;
             font-weight: bold;
         }
@@ -67,73 +68,62 @@
             text-align: center;
             padding: 10px 0;
         }
-        /* Floating icon styles */
         .floating-icon {
             position: fixed;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #cc0000; /* Red background color */
-            color: #ffffff; /* White text color */
+            background-color: #cc0000;
+            color: #ffffff;
             width: 200px;
             height: 60px;
             text-align: center;
-            line-height: 60px; /* Center vertically */
+            line-height: 60px;
             border-radius: 30px;
             font-size: 17px;
-            font-weight: bold; /* Bold text */
-            z-index: 1000; /* Ensure icon stays above other content */
-            cursor: pointer; /* Change cursor to pointer on hover */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for floating effect */
-            transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease; /* Smooth transition for floating effect */
+            font-weight: bold;
+            z-index: 1000;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease, background-color 0.3s ease;
         }
-
         .floating-icon:hover {
-            transform: translateX(-50%) translateY(-5px); /* Move icon up slightly on hover */
-            width: 350px; /* Enlarge width on hover to fit text */
-            height: 65px; /* Enlarge height on hover to fit text */
-            background-color: #007BFF; /* Darker red background on hover */
+            transform: translateX(-50%) translateY(-5px);
+            width: 350px;
+            height: 65px;
+            background-color: #007BFF;
         }
-
         .floating-icon.touch-active {
-            transform: translateX(-50%) translateY(-5px); /* Move icon up slightly on touch */
-            width: 350px; /* Enlarge width on touch to fit text */
-            height: 65px; /* Enlarge height on touch to fit text */
-            background-color: #007BFF; /* Darker red background on touch */
+            transform: translateX(-50%) translateY(-5px);
+            width: 350px;
+            height: 65px;
+            background-color: #007BFF;
         }
-
         .floating-icon a {
             display: inline-block;
             vertical-align: middle;
             text-decoration: none;
-            color: inherit; /* Inherit text color */
-            transition: color 0.3s ease; /* Smooth transition for text color */
+            color: inherit;
+            transition: color 0.3s ease;
         }
-
         .floating-icon a:hover {
-            text-decoration: none; /* Ensure no underline on hover */
-            color: #ffffff; /* White text color on hover */
+            text-decoration: none;
+            color: #ffffff;
         }
-
         .reduced-line-height {
-            line-height: 1.2; /* Reduced line height for closer lines */
+            line-height: 1.2;
         }
     </style>
 </head>
 <body>
     <header>
-        <!-- Your header content, navigation bar, etc. -->
         <nav>
-            <ul>
-                <!-- Navigation links if needed -->
-            </ul>
+            <ul></ul>
         </nav>
     </header>
 
     <main>
-        <!-- Display menu images -->
         <div class="menu-images">
-            <!-- Replace the following with your image tags -->
             <img src="menu/1.jpg" alt="Menu Item 1">
             <img src="menu/2.jpg" alt="Menu Item 2">
             <img src="menu/3.jpg" alt="Menu Item 3">
@@ -156,72 +146,71 @@
         <p>&copy; 2024 Hotel New Gundicha. All rights reserved.</p>
     </footer>
 
-    <!-- Floating icon for pinewart.com -->
     <div class="floating-icon" id="floating-icon">
         <a href="#" id="icon-link">Want own website?</a>
     </div>
 
-    <!-- JavaScript to handle hover effect and click event -->
+    <!-- Floating icon JavaScript -->
     <script>
-        // Get the elements
         const floatingIcon = document.getElementById('floating-icon');
         const iconLink = document.getElementById('icon-link');
-
-        // Define the text and link for when hovering
         const hoverText = 'Click to Visit Pinewart.com<br>For all your digital content needs!';
         const hoverLink = 'https://www.pinewart.com';
-
-        // Add a flag to track if the icon has been touched
         let touched = false;
 
-        // Function to check if the device is touch-enabled
         function isTouchDevice() {
             return 'ontouchstart' in window || navigator.maxTouchPoints;
         }
 
-        // Add event listeners for hover (only for non-touch devices)
         if (!isTouchDevice()) {
             floatingIcon.addEventListener('mouseenter', function() {
                 iconLink.innerHTML = hoverText;
-                iconLink.classList.add('reduced-line-height'); // Add class to reduce line height
+                iconLink.classList.add('reduced-line-height');
             });
-
             floatingIcon.addEventListener('mouseleave', function() {
                 iconLink.innerHTML = 'Want own website?';
-                iconLink.classList.remove('reduced-line-height'); // Remove class to reset line height
+                iconLink.classList.remove('reduced-line-height');
             });
-
             floatingIcon.addEventListener('click', function() {
                 window.location.href = hoverLink;
             });
         }
 
-        // Add event listener for touch
         floatingIcon.addEventListener('touchstart', function(e) {
             if (!touched) {
-                e.preventDefault(); // Prevent the click event
+                e.preventDefault();
                 iconLink.innerHTML = hoverText;
-                iconLink.classList.add('reduced-line-height'); // Add class to reduce line height
+                iconLink.classList.add('reduced-line-height');
                 floatingIcon.classList.add('touch-active');
                 touched = true;
             }
         });
 
-        // Add event listener for touch outside the floating icon
         document.addEventListener('touchstart', function(e) {
             if (touched && !floatingIcon.contains(e.target)) {
                 iconLink.innerHTML = 'Want own website?';
-                iconLink.classList.remove('reduced-line-height'); // Remove class to reset line height
+                iconLink.classList.remove('reduced-line-height');
                 floatingIcon.classList.remove('touch-active');
                 touched = false;
             }
         });
 
-        // Add event listener for click
         floatingIcon.addEventListener('click', function() {
             if (touched) {
                 window.location.href = hoverLink;
             }
+        });
+    </script>
+
+    <!-- Image versioning script -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const version = "2.1"; // Change this whenever you update images
+            const images = document.querySelectorAll('.menu-images img');
+            images.forEach(img => {
+                const originalSrc = img.getAttribute('src').split('?')[0]; // Strip existing query string
+                img.setAttribute('src', `${originalSrc}?v=${version}`);
+            });
         });
     </script>
 </body>
